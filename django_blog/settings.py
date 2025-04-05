@@ -88,7 +88,8 @@ DATABASES = {
         'NAME': 'Omnify-Blogs',
         'USER':'postgres',
         'PASSWORD': '9398165858',
-        'HOST':'localhost'
+        'HOST':'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -122,6 +123,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
