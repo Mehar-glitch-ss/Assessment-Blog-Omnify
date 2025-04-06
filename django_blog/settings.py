@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
+#import dj_database_url
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static'),
@@ -93,7 +93,8 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse("postgresql://omnify_blogs_user:EpV1EuzpN8fLX3CdFeWeWqAK1s1nojnd@dpg-cvoush49c44c73brqgfg-a.oregon-postgres.render.com/omnify_blogs")
+# database_url = os.environ.get("DATABASE_URL")
+# DATABASES['default'] = dj_database_url.parse(database_url)
 
 # postgresql://omnify_blogs_user:EpV1EuzpN8fLX3CdFeWeWqAK1s1nojnd@dpg-cvoush49c44c73brqgfg-a.oregon-postgres.render.com/omnify_blogs
 
