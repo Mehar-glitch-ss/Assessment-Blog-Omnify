@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static'),
@@ -32,7 +33,6 @@ SECRET_KEY = 'django-insecure-d++&53uw-@-_v2gul-9la=_+qioe!h_psk@2lch)__n*q2kmei
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 
 # Application definition
@@ -93,6 +93,9 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = dj_database_url.parse("postgresql://omnify_blogs_user:EpV1EuzpN8fLX3CdFeWeWqAK1s1nojnd@dpg-cvoush49c44c73brqgfg-a.oregon-postgres.render.com/omnify_blogs")
+
+# postgresql://omnify_blogs_user:EpV1EuzpN8fLX3CdFeWeWqAK1s1nojnd@dpg-cvoush49c44c73brqgfg-a.oregon-postgres.render.com/omnify_blogs
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
