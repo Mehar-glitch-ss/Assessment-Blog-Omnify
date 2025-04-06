@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 from .models import Post
 from . import models
 from django.contrib.auth import authenticate, login, logout
+def index(request):
+    return render(request, 'index.html')
+
 
 def home(request):
     return render(request, 'blog/base.html')  # Or any other template you want
