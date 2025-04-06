@@ -95,7 +95,17 @@ DATABASES = {
 }
 
 database_url = os.environ.get("DATABASE_URL")
-DATABASES['default'] = dj_database_url.parse(database_url)
+DATABASES = {
+    'default': dj_database_url.parse(
+        os.environ.get('DATABASE_URL').decode()
+        if isinstance(os.environ.get('DATABASE_URL'), bytes)
+        else os.environ.get('DATABASE_URL'),
+        conn_max_age=600,  # optional: keeps DB connections alive
+        ssl_require=True   # optional: force SSL for production
+    )
+}
+
+#DATABASES['default'] = dj_database_url.parse(database_url)
 
 # postgresql://omnify_blogs_user:EpV1EuzpN8fLX3CdFeWeWqAK1s1nojnd@dpg-cvoush49c44c73brqgfg-a.oregon-postgres.render.com/omnify_blogs
 
