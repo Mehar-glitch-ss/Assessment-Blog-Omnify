@@ -97,13 +97,12 @@ DATABASES = {
 database_url = os.environ.get("DATABASE_URL")
 DATABASES = {
     'default': dj_database_url.parse(
-        os.environ.get('DATABASE_URL').decode()
-        if isinstance(os.environ.get('DATABASE_URL'), bytes)
-        else os.environ.get('DATABASE_URL'),
-        conn_max_age=600,  # optional: keeps DB connections alive
-        ssl_require=True   # optional: force SSL for production
+        os.environ.get('DATABASE_URL'),
+        conn_max_age=600,
+        ssl_require=True
     )
 }
+
 
 #DATABASES['default'] = dj_database_url.parse(database_url)
 
