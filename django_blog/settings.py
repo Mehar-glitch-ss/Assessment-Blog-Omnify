@@ -94,8 +94,8 @@ DATABASES = {
     }
 }
 
- database_url = os.environ.get("DATABASE_URL")
- DATABASES['default'] = dj_database_url.parse(database_url)
+database_url = os.environ.get("DATABASE_URL")
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 # postgresql://omnify_blogs_user:EpV1EuzpN8fLX3CdFeWeWqAK1s1nojnd@dpg-cvoush49c44c73brqgfg-a.oregon-postgres.render.com/omnify_blogs
 
