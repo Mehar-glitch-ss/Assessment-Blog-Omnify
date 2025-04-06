@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-#import dj_database_url
+import dj_database_url
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static'),
@@ -30,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", "False").lower()="true"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -94,8 +94,8 @@ DATABASES = {
     }
 }
 
-# database_url = os.environ.get("DATABASE_URL")
-# DATABASES['default'] = dj_database_url.parse(database_url)
+ database_url = os.environ.get("DATABASE_URL")
+ DATABASES['default'] = dj_database_url.parse(database_url)
 
 # postgresql://omnify_blogs_user:EpV1EuzpN8fLX3CdFeWeWqAK1s1nojnd@dpg-cvoush49c44c73brqgfg-a.oregon-postgres.render.com/omnify_blogs
 
